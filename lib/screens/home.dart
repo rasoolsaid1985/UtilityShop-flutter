@@ -13,6 +13,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Center(
         child: FlatButton(
+          //this button will you
           child: Text("LOGOUT"),
           onPressed: () {
             FirebaseAuth.instance.signOut();
