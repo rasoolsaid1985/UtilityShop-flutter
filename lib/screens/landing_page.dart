@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:utility_shop/constants.dart';
-import 'package:utility_shop/screens/home.dart';
+import 'file:///D:/Programs/utility_shop/lib/screens/home/home.dart';
 import 'file:///D:/Programs/utility_shop/lib/screens/Login/login.dart';
 import 'package:utility_shop/screens/welcome.dart';
 
