@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:utility_shop/screens/home/cartIcon.dart';
 import 'package:utility_shop/screens/home/home_header.dart';
 
@@ -27,6 +28,22 @@ class home_icon extends StatelessWidget {
             noOfItems: 3,
             press: () {},
           ),
+          //SizedBox(height: 8),
+          // InkWell(
+          //   child: Stack(
+          //     children: [
+          //       Container(
+          //         width: 40,
+          //           height: 40,
+          //         decoration: BoxDecoration(
+          //           color: login_textField,
+          //           shape: BoxShape.circle,
+          //         ),
+          //         child: SvgPicture.asset("assets/icon/Bell.svg"),
+          //       )
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );
