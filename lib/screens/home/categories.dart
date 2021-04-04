@@ -1,31 +1,50 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Categories extends StatelessWidget {
+  const Categories({
+    Key key,
+    @required this.icon,
+    @required this.text,
+    @required this.press,
+  }) : super(key: key);
+
+  final String icon, text;
+  final GestureTapCallback press;
+
+
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60,
-      width: 60,
-    child: Column(
+    return Row(
       children: [
-        AspectRatio(
-          aspectRatio: 1,
-          child: Container(
-            //padding: EdgeInsets.all(10),
-            margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
-            decoration: BoxDecoration(
-              color: Color(0xFFFFECDF),
-              borderRadius: BorderRadius.circular(19),
+        GestureDetector(
+          onTap: () {},
+          child: SizedBox(
+            height: 60,
+            width: 65,
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(8),
+                  // height: 40,
+                  // width: 40,
+                  //margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFFECDF),
+                    borderRadius: BorderRadius.circular(20),
+                    //shape: BoxShape.circle,
+                  ),
+                  child: SvgPicture.asset(icon),
+                ),
+                SizedBox(height: 2),
+                Text(text,
+                  textAlign: TextAlign.center,
+                ),
+              ],
             ),
-            child: SvgPicture.asset("assets/icons/Bell.svg"),
           ),
         ),
-        SizedBox(height: 5),
-        Text("Ghee"),
       ],
-    ),
     );
   }
 }
