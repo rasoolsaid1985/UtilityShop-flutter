@@ -3,6 +3,10 @@ import 'package:utility_shop/screens/Login/textField_Container.dart';
 import 'package:utility_shop/screens/home/home_slider.dart';
 
 class category_slider extends StatelessWidget {
+  final String text;
+  const category_slider({
+    @required this.text,
+  });
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -11,7 +15,7 @@ class category_slider extends StatelessWidget {
           padding: EdgeInsets.all(10),
           alignment: Alignment.centerLeft,
           child: Text(
-            'Category',
+            text,
             textAlign: TextAlign.left,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(fontWeight: FontWeight.bold,
@@ -23,7 +27,7 @@ class category_slider extends StatelessWidget {
     );
   }
 }
-// class catefory_show extends StatelessWidget {
+// class category_show extends StatelessWidget {
 //
 //   Items item1 = new Items(
 //       title: "",
