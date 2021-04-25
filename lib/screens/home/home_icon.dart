@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:utility_shop/screens/home/cartIcon.dart';
 import 'package:utility_shop/screens/home/home_header.dart';
+import 'package:utility_shop/screens/profile/notification.dart';
 
 import '../../constants.dart';
 
@@ -25,8 +26,17 @@ class home_icon extends StatelessWidget {
           ),
           carticon(
             svgSrc: "assets/icons/Bell.svg",
-            noOfItems: 3,
-            press: () {},
+            noOfItems: 0,
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return notification();
+                  },
+                ),
+              );
+            },
           ),
           //SizedBox(height: 8),
           // InkWell(

@@ -24,7 +24,10 @@ class profile_menu extends StatelessWidget {
           child: Row(
             children: [
               SvgPicture.asset(icon,
-              color: Colors.redAccent,),
+              height: 15,
+              width: 15,
+              //color: Colors.redAccent,
+              ),
               SizedBox(width: 20,),
               Expanded(child: Text(text,
                 style: TextStyle(
@@ -34,7 +37,8 @@ class profile_menu extends StatelessWidget {
               ),
               Icon(Icons.arrow_forward_ios)
             ],
-          )),
+          ),
+      ),
     );
   }
 }

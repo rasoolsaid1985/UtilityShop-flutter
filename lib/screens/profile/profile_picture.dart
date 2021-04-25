@@ -26,17 +26,17 @@ class profile_picture extends StatelessWidget {
             child: SizedBox(
               height: 46,
               width: 46,
-              child: FlatButton(
-                padding: EdgeInsets.zero,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    side: BorderSide(color: Colors.black)
-                ),
-                color: Colors.white,
-                onPressed: () {},
-                child: Icon(FontAwesomeIcons.plus,
-                  color: Colors.grey,),
-              ),
+              // child: FlatButton(
+              //   padding: EdgeInsets.zero,
+              //   shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(30),
+              //       side: BorderSide(color: Colors.black)
+              //   ),
+              //   color: Colors.white,
+              //   onPressed: () {},
+              //   // child: Icon(FontAwesomeIcons.plus,
+              //   //   color: Colors.grey,),
+              // ),
             ),
           ),
         ],
