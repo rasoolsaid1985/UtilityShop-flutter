@@ -18,7 +18,7 @@ class Categories extends StatelessWidget {
     return Row(
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: press,
           child: SizedBox(
             height: 60,
             width: 65,
@@ -30,11 +30,13 @@ class Categories extends StatelessWidget {
                   // width: 40,
                   //margin: EdgeInsets.fromLTRB(15, 0, 0, 0),
                   decoration: BoxDecoration(
-                    color: Color(0xFFFFECDF),
-                    borderRadius: BorderRadius.circular(20),
+                    //color: Color(0xFFFFECDF),
+                    borderRadius: BorderRadius.circular(30),
                     //shape: BoxShape.circle,
                   ),
                   child: SvgPicture.asset(icon),
+                  height: 35,
+                  width: 35,
                 ),
                 SizedBox(height: 2),
                 Text(text,

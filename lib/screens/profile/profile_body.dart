@@ -1,9 +1,14 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:utility_shop/screens/Login/login.dart';
 import 'package:utility_shop/screens/profile/edit_profile.dart';
+import 'package:utility_shop/screens/profile/logout.dart';
 import 'package:utility_shop/screens/profile/notification.dart';
+import 'package:utility_shop/screens/profile/payment.dart';
 import 'package:utility_shop/screens/profile/profile_menu.dart';
 import 'package:utility_shop/screens/profile/profile_picture.dart';
 
@@ -65,20 +70,30 @@ class profileBody extends StatelessWidget {
                   profile_menu(icon: 'assets/icons/Bell.svg',
                   text: "Notification",
                   press: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return notification();
-                        },
-                      ),
-                    );
-                  },
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return notification();
+                          },
+                        ),
+                      );
+                  },  //jghdfjg
                   ),
-                  profile_menu(icon: 'assets/icons/payIcon.svg',
-                    text: "Payments",
-                    press: (){},
-                  ),
+                  // profile_menu(icon: 'assets/icons/payIcon.svg',
+                  //   text: "Payments",
+                  //   press: (){
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) {
+                  //           return payment();
+                  //         },
+                  //       ),
+                  //     );
+                  //   },
+                  // ),
                   profile_menu(icon: 'assets/icons/myOrder.svg',
                     text: "My Order",
                     press: (){},
@@ -90,6 +105,10 @@ class profileBody extends StatelessWidget {
                   profile_menu(icon: 'assets/icons/about.svg',
                     text: "About App",
                     press: (){},
+                  ),
+                  profile_menu(icon: 'assets/icons/about.svg',
+                    text: "Logout",
+                    press: (){},
                   )
                 ],
               ),
@@ -99,6 +118,7 @@ class profileBody extends StatelessWidget {
     );
   }
 }
+
 
 // class profile_menu extends StatelessWidget {
 //   const profile_menu({

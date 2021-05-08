@@ -19,7 +19,12 @@ import '../../constants.dart';
 import 'cartIcon.dart';
 import 'home_header.dart';
 
-class Home_Body extends StatelessWidget {
+class Home_Body extends StatefulWidget {
+  @override
+  _Home_BodyState createState() => _Home_BodyState();
+}
+
+class _Home_BodyState extends State<Home_Body> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

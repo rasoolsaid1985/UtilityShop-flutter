@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:utility_shop/screens/categories_product/flour.dart';
+import 'package:utility_shop/screens/categories_product/ghee.dart';
+import 'package:utility_shop/screens/categories_product/sugar_product.dart';
 import 'package:utility_shop/screens/home/categories.dart';
 
 class categories_padding extends StatelessWidget {
@@ -15,10 +18,37 @@ class categories_padding extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Categories(icon: "assets/icons/Bell.svg", text: "Ghee", press: null),
-            Categories(icon: "assets/icons/Bell.svg", text: "Sugar", press: null),
-            Categories(icon: "assets/icons/Bell.svg", text: "Atta", press: null),
-            Categories(icon: "assets/icons/Bell.svg", text: "Dalain", press: null),
+            Categories(icon: "assets/icons/ghee.svg", text: "Ghee", press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ghee();
+                  },
+                ),
+              );
+            },),
+            Categories(icon: "assets/icons/flour.svg", text: "Flour", press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return flour();
+                  },
+                ),
+              );
+            }),
+            Categories(icon: "assets/icons/sugar.svg", text: "Sugar", press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return sugar_product();
+                  },
+                ),
+              );
+            }),
+            Categories(icon: "assets/icons/oil.svg", text: "Oil", press: () {}),
           ],
         ),
       ),

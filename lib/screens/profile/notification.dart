@@ -7,6 +7,7 @@ class notification extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
         iconTheme: IconThemeData( color: Colors. black),
           backgroundColor: Colors.white,
           title: Container(

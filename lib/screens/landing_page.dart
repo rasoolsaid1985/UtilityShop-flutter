@@ -71,4 +71,12 @@ class LandingPage extends StatelessWidget {
       },
     );
   }
+  // Future logout() async {
+  //   try{
+  //     return await _initialization.welcome();
+  //   } catch (e) {
+  //     print(e.toString());
+  //     return null;
+  //   }
+  // }
 }

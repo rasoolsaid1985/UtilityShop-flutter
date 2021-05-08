@@ -75,8 +75,6 @@ class recommended extends StatelessWidget {
               ),
 
             ),
-
-
           ],
         ),
         Row(

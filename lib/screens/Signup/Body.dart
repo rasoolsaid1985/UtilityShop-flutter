@@ -18,6 +18,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as JSON;
 import 'file:///D:/Programs/utility_shop/lib/screens/home/home.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:utility_shop/utils/GoogleSignInButton.dart';
 
 class Body extends StatefulWidget {
   final Widget child;
@@ -40,6 +41,7 @@ class _BodyState extends State<Body> {
       return null;
     }
   }
+
 
   Future<void> alertDialogBuilder(String error) async {
     return showDialog(context: context,
@@ -94,6 +96,7 @@ class _BodyState extends State<Body> {
         signupLoading = false;
       });
     } else {
+      await Future.delayed(Duration(seconds: 3));
       Navigator.pop(context);
     }
     }
@@ -126,11 +129,12 @@ class _BodyState extends State<Body> {
 
   _loginWithFB() async{
     final result = await facebookLogin.logIn(['email']);
-
+    await Future.delayed(Duration(seconds: 3));
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
         final token = result.accessToken.token;
-        final graphResponse = await http.get('https://graph.facebook.com/v2.12/me?fields=name,picture,email&access_token=${token}');
+        var url = Uri.parse("https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email&access_token=${token}");
+        final graphResponse = await http.get(url);
         final profile = JSON.jsonDecode(graphResponse.body);
         print(profile);
         setState(() {
@@ -149,6 +153,7 @@ class _BodyState extends State<Body> {
   }
 
    _loginWithGoogle() async{
+     //await Future.delayed(Duration(seconds: 3));
     try{
       await _googleSignIn.signIn();
       setState(() {
@@ -171,6 +176,11 @@ class _BodyState extends State<Body> {
         },
         ),
         )
+        // Navigator.push(context, MaterialPageRoute(builder: (context) {
+        //   return HomePage();
+        // },
+        // ),
+        // )
     :
         Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -242,7 +252,69 @@ class _BodyState extends State<Body> {
     ),
       ),);
   }
+
 }
 
-
+// class Authentication {
+//   static Future<User> signInWithGoogle({BuildContext context}) async {
+//     FirebaseAuth auth = FirebaseAuth.instance;
+//     User user;
+//
+//     final GoogleSignIn googleSignIn = GoogleSignIn();
+//
+//     final GoogleSignInAccount googleSignInAccount =
+//     await googleSignIn.signIn();
+//
+//     if (googleSignInAccount != null) {
+//       final GoogleSignInAuthentication googleSignInAuthentication =
+//       await googleSignInAccount.authentication;
+//
+//       final AuthCredential credential = GoogleAuthProvider.credential(
+//         accessToken: googleSignInAuthentication.accessToken,
+//         idToken: googleSignInAuthentication.idToken,
+//       );
+//
+//       try {
+//         final UserCredential userCredential =
+//         await auth.signInWithCredential(credential);
+//
+//         user = userCredential.user;
+//       } on FirebaseAuthException catch (e) {
+//         if (e.code == 'account-exists-with-different-credential') {
+//           ScaffoldMessenger.of(context).showSnackBar(
+//             Authentication.customSnackBar(
+//               content:
+//               'The account already exists with a different credential',
+//             ),
+//           );
+//         } else if (e.code == 'invalid-credential') {
+//           ScaffoldMessenger.of(context).showSnackBar(
+//             Authentication.customSnackBar(
+//               content:
+//               'Error occurred while accessing credentials. Try again.',
+//             ),
+//           );
+//         }
+//       } catch (e) {
+//         ScaffoldMessenger.of(context).showSnackBar(
+//           Authentication.customSnackBar(
+//             content: 'Error occurred using Google Sign In. Try again.',
+//           ),
+//         );
+//       }
+//
+//       return user;
+//     }
+//   }
+//
+//   static SnackBar customSnackBar({String content}) {
+//     return SnackBar(
+//       backgroundColor: Colors.black,
+//       content: Text(
+//         content,
+//         style: TextStyle(color: Colors.redAccent, letterSpacing: 0.5),
+//       ),
+//     );
+//   }
+// }
 
