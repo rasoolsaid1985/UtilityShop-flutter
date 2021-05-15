@@ -1,21 +1,112 @@
+import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:utility_shop/screens/Login/login.dart';
 import 'package:utility_shop/screens/profile/edit_profile.dart';
-import 'package:utility_shop/screens/profile/logout.dart';
 import 'package:utility_shop/screens/profile/notification.dart';
 import 'package:utility_shop/screens/profile/payment.dart';
 import 'package:utility_shop/screens/profile/profile_menu.dart';
 import 'package:utility_shop/screens/profile/profile_picture.dart';
+import 'package:utility_shop/screens/profile/task.dart';
 
-class profileBody extends StatelessWidget {
+import 'firebaseServ.dart';
+
+class profileBody extends StatefulWidget {
+  @override
+  _profileBodyState createState() => _profileBodyState();
+}
+
+class _profileBodyState extends State<profileBody> {
+  //final CollectionReference myCollection= FirebaseFirestore.instance.collection('A1KhUgnqlrabC75813eP');
+  String userName = "placeholder";
+  dynamic data;
+  final myCollection= FirebaseFirestore.instance.collection('button').doc(FirebaseAuth.instance.currentUser.uid);
+  //var document = await Firestore.instance.collection('button'.document('A1KhUgnqlrabC75813eP');
+
+  // List<task> items;
+  // firestoreService fireserv = new firestoreService();
+  // StreamSubscription<QuerySnapshot> todoTask;
+  //
+  // void initState () {
+  //   super.initState();
+  //   items =new List();
+  //
+  //   todoTask?.cancel();
+  //   todoTask=fireserv.getTaskList().listen((QuerySnapshot snapshot){
+  //     final List<task> tasks = snapshot.docs.map((documentSnapshot) => task.fromMap(documentSnapshot.data))
+  //         .toList();
+  //     setState(() {
+  //       this.items = tasks;
+  //     });
+ // then((querySnapshot)
+  //   });
+  // }
+  Future getUserProfile () async {
+
+    List itemList = [];
+    try{
+      await myCollection.snapshots().listen((querySnapshot) {
+        print(querySnapshot.data()["firstName"]);
+
+        setState(() {
+          userName = querySnapshot.data()["firstName"] +" " + querySnapshot.data()["lastName"];
+        });
+        // querySnapshot.forEach((element){
+        //   itemList.add(element.data);
+        // });
+      });
+    }
+    catch(e){
+      print(e.toString());
+      return null;
+    }
+  }
+  // Future getUserProfile () async {
+  //   // final DocumentReference document =   FirebaseFirestore.instance.collection("button").doc('123');
+  //   // await document.get().then<dynamic>(( DocumentSnapshot snapshot) async{
+  //   //   setState(() {
+  //   //     data =snapshot.data;
+  //   //   });
+  //   // });
+  //   List itemList =[];
+  //   String name;
+  //   try{
+  //     await myCollection.get().then((querySnapshot) {
+  //       querySnapshot.docs.forEach((element){
+  //         itemList.add(element.data);
+  //       });
+  //     });
+  //   }
+  //   catch(e){
+  //     print(e.toString());
+  //     return null;
+  //   }
+  // }
+  @override
+  void initState() {
+    super.initState();
+    fetchDatabaseList();
+  }
+  String userProfileList;
+  fetchDatabaseList() async{
+    dynamic resultant = await getUserProfile();
+    print(resultant);
+    if(resultant == null){
+      print(userProfileList);
+    }else {
+      print(resultant);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    //final documents = streamSnapshot.data.docs;
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
@@ -40,11 +131,8 @@ class profileBody extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("xyz",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                        ),)
+                      Text(userName),
+
                     ],
                   ),
                  // SizedBox(height: 10,),
@@ -56,6 +144,10 @@ class profileBody extends StatelessWidget {
                       color: Colors.grey
                     ),),
                     onPressed: (){
+                      // FirebaseFirestore.instance.
+                      // collection('button/kuIUlGlikcZFpz7MaSzg/texthere').add({'text': 'Ali Ahmad'}
+                      // //snapshots().listen((data) {print(data.docs[0]['text']);}
+                      // )
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -108,7 +200,9 @@ class profileBody extends StatelessWidget {
                   ),
                   profile_menu(icon: 'assets/icons/about.svg',
                     text: "Logout",
-                    press: (){},
+                    press: (){
+                    FirebaseAuth.instance.signOut();
+                    },
                   )
                 ],
               ),

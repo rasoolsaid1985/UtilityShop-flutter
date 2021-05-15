@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:utility_shop/constants.dart';
 import 'package:utility_shop/model/Already_have_acccount_check.dart';
 import 'package:utility_shop/model/Rounder_Button.dart';
@@ -99,7 +98,6 @@ class _BodyState extends State<Body> {
   bool _loginformLoading=false;
   String _loginEmail;
   String _loginPassword;
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
 
   @override
   void initState() {
@@ -114,34 +112,9 @@ class _BodyState extends State<Body> {
     passwordfocusNode.dispose();
     super.dispose();
   }
-  _loginWithGoogle() async{
-    //await Future.delayed(Duration(seconds: 3));
-    try{
-      await _googleSignIn.signIn();
-      setState(() {
-        _loginformLoading= true;
-      });
-      String _loginFeedback = await _loginAccount();
-      if(_loginFeedback != null) {
-        alertDialogBuilder(_loginFeedback);
-        setState(() {
-          _loginformLoading = false;
-        });
-      } else {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return HomePage();
-        },
-        ),
-        );
-      }
-    }
-    catch(err){
-      print(err);
-    }
-  }
-
   _loginWithFB() async{
     final result = await facebookLogin.logIn(['email']);
+
     switch (result.status) {
       case FacebookLoginStatus.loggedIn:
         final token = result.accessToken.token;
@@ -249,7 +222,7 @@ class _BodyState extends State<Body> {
                 SocialIcons(
                   iconsrc: "assets/icons/google-plus.svg",
                   press: () {
-                    _loginWithGoogle();
+                    //_loginWithGoogle();
                   },
                 ),
               ],

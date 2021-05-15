@@ -45,7 +45,7 @@ class flour extends StatelessWidget {
                 children: [
                   Row(
                       children: [
-                        product_page(image: "assets/images/sugar.jpg", text: "Sugar", price: "Rs. 800 (20 KG)", press: () {},),
+                        product_page(image: "assets/images/flour.jpg", text: "Flour", price: "Rs. 800 (20 KG)", press: () {},),
                       ]
                   ),
                 ],

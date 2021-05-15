@@ -15,9 +15,9 @@ class categories3 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Categories(icon: "assets/icons/assecories.svg", text: "Acces", press: () {}),
+            Categories(icon: "assets/icons/ketchup.svg", text: "Ketchup", press: () {}),
             Categories(icon: "assets/icons/beverages.svg", text: "Drinks", press: (){}),
-            Categories(icon: "assets/icons/detergants.svg", text: "", press: (){}),
+            Categories(icon: "assets/icons/detergants.svg", text: "Tea", press: (){}),
             Categories(icon: "assets/icons/other.svg", text: "Others", press: (){}),
           ],
         ),

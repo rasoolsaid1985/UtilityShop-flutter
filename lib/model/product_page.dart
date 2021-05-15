@@ -32,8 +32,11 @@ class product_page extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       GestureDetector(
-                        child: Image.asset(image,
-                            height: size.height*0.20),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: Image.asset(image,
+                              height: size.height*0.20),
+                        ),
                         onTap: press,
                       ),
                       //SizedBox(height: 15,),
@@ -46,6 +49,8 @@ class product_page extends StatelessWidget {
                       Text(price,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                          letterSpacing: 1,
                         ),
                         textAlign: TextAlign.left,)
                     ],
