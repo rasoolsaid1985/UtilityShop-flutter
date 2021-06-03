@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:utility_shop/cart/cart_screen.dart';
 import 'package:utility_shop/screens/brand/brand.dart';
 import 'package:utility_shop/screens/profile/profile.dart';
 
 
 
 import 'Home_Body.dart';
+import 'package:utility_shop/utils/auth.dart';
 
 // class home_footer extends StatefulWidget {
 //
@@ -75,7 +77,7 @@ class _home_footerState extends State<home_footer> {
   final tabs =[
     Center(child: Home_Body()),
     Center(child: brand()),
-    Center(child: Text('Cart'),),
+    Center(child: CartPage()),
     Center(child: profile(),),
 
   ];

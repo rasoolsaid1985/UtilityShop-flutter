@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:utility_shop/model/productPage.dart';
+import 'package:utility_shop/product/_detail/ghee/daldaGhee.dart';
+import 'package:utility_shop/product/_detail/ghee/ghee.dart';
+import 'package:utility_shop/screens/categories_product/milk.dart';
 import 'package:utility_shop/screens/categories_product/pulses.dart';
 import 'package:utility_shop/screens/categories_product/rice.dart';
 import 'package:utility_shop/screens/home/categories.dart';
+import 'package:utility_shop/screens/rice/rice.dart';
+import 'package:utility_shop/utils/auth.dart';
 
 class categories2 extends StatelessWidget {
   const categories2({
@@ -37,8 +43,26 @@ class categories2 extends StatelessWidget {
                 ),
               );
             }),
-            Categories(icon: "assets/icons/Food1.svg", text: "Milk", press: () {}),
-            Categories(icon: "assets/icons/biscuit.svg", text: "Biscuits", press: () {}),
+            Categories(icon: "assets/icons/Food1.svg", text: "Milk", press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return milk();
+                  },
+                ),
+              );
+            }),
+            Categories(icon: "assets/icons/biscuit.svg", text: "Biscuits", press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return Ghee();
+                  },
+                ),
+              );
+            }),
           ],
         ),
       ),

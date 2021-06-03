@@ -44,8 +44,6 @@ class ghee extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.grey),
                       ),
-                      height: size.height*0.35,
-                      width: size.width*0.45,
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,17 +51,31 @@ class ghee extends StatelessWidget {
                           Image.asset("assets/images/dalda.jpg",
                               height: size.height*0.20),
                           //SizedBox(height: 15,),
+
                           Text("Dalda Banaspati",style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
                             textAlign: TextAlign.left,),
                           //SizedBox(height: 10,),
-                          Text("Rs. 280 (1 KG)",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.left,)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Rs. 280 (1 KG)",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.left,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 18.0),
+                                child: IconButton(
+                                    icon: Icon(Icons.add_shopping_cart),
+                                    onPressed: () {
+                                    }),
+                              )
+                            ],
+                          )
+
                         ],
                       ),
                     ),
@@ -75,8 +87,6 @@ class ghee extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.grey),
                       ),
-                      height: size.height*0.35,
-                      width: size.width*0.45,
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,13 +106,25 @@ class ghee extends StatelessWidget {
                               textAlign: TextAlign.left,),
                           ),
                           // SizedBox(height: 5,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text("Rs. 1400 (5 KG)",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Text("Rs. 1400 (5 KG)",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.left,),
                               ),
-                              textAlign: TextAlign.left,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: IconButton(
+                                    icon: Icon(Icons.add_shopping_cart),
+                                    onPressed: () {
+                                    }),
+                              )
+                            ],
                           )
                         ],
                       ),
@@ -114,26 +136,37 @@ class ghee extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.grey),
                       ),
-                      height: size.height*0.35,
-                      width: size.width*0.45,
+
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset("assets/images/dalda2.jpg",
                               height: size.height*0.18),
-                          //SizedBox(height: 8,),
+                          SizedBox(height: 15,),
                           Text("Dalda Tin",style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 14,
+                            //fontSize: 14,
                           ),
                             textAlign: TextAlign.left,),
                           // SizedBox(height: 5,),
-                          Text("Rs. 700 (2.5 KG)",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.left,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Rs. 700 (2.5 KG)",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.left,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: IconButton(
+                                    icon: Icon(Icons.add_shopping_cart),
+                                    onPressed: () {
+                                    }),
+                              )
+                            ],
+                          ),
                           SizedBox(height: 10,),
                           // Text(
                           //   "In Stock",
@@ -173,8 +206,7 @@ class ghee extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.grey),
                       ),
-                      height: size.height*0.35,
-                      width: size.width*0.45,
+
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -191,11 +223,23 @@ class ghee extends StatelessWidget {
                           ),
                             textAlign: TextAlign.left,),
                           //SizedBox(height: 10,),
-                          Text("Rs. 170 (1 KG)",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.left,)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Rs. 170 (1 KG)",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.left,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: IconButton(
+                                    icon: Icon(Icons.add_shopping_cart),
+                                    onPressed: () {
+                                    }),
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -207,8 +251,7 @@ class ghee extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.grey),
                       ),
-                      height: size.height*0.35,
-                      width: size.width*0.45,
+
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -225,13 +268,25 @@ class ghee extends StatelessWidget {
                               textAlign: TextAlign.left,),
                           ),
                           // SizedBox(height: 5,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text("Rs. 950 (5 KG)",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Text("Rs. 950 (5 KG)",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.left,),
                               ),
-                              textAlign: TextAlign.left,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: IconButton(
+                                    icon: Icon(Icons.add_shopping_cart),
+                                    onPressed: () {
+                                    }),
+                              )
+                            ],
                           )
                         ],
                       ),
@@ -243,8 +298,7 @@ class ghee extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.grey),
                       ),
-                      height: size.height*0.35,
-                      width: size.width*0.45,
+
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -258,11 +312,23 @@ class ghee extends StatelessWidget {
                           ),
                             textAlign: TextAlign.left,),
                           // SizedBox(height: 5,),
-                          Text("Rs. 435 (2.5 KG)",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.left,)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Rs. 435 (2.5 KG)",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.left,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: IconButton(
+                                    icon: Icon(Icons.add_shopping_cart),
+                                    onPressed: () {
+                                    }),
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -294,8 +360,7 @@ class ghee extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.grey),
                       ),
-                      height: size.height*0.35,
-                      width: size.width*0.45,
+
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -309,11 +374,23 @@ class ghee extends StatelessWidget {
                           ),
                             textAlign: TextAlign.left,),
                           //SizedBox(height: 10,),
-                          Text("Rs. 170 (1 KG)",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.left,)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Rs. 170 (1 KG)",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.left,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: IconButton(
+                                    icon: Icon(Icons.add_shopping_cart),
+                                    onPressed: () {
+                                    }),
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),
@@ -325,8 +402,7 @@ class ghee extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.grey),
                       ),
-                      height: size.height*0.35,
-                      width: size.width*0.45,
+
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -349,13 +425,25 @@ class ghee extends StatelessWidget {
                               textAlign: TextAlign.left,),
                           ),
                           // SizedBox(height: 5,),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text("Rs. 950 (5 KG)",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Text("Rs. 950 (5 KG)",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.left,),
                               ),
-                              textAlign: TextAlign.left,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: IconButton(
+                                    icon: Icon(Icons.add_shopping_cart),
+                                    onPressed: () {
+                                    }),
+                              )
+                            ],
                           )
                         ],
                       ),
@@ -367,8 +455,7 @@ class ghee extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(color: Colors.grey),
                       ),
-                      height: size.height*0.35,
-                      width: size.width*0.45,
+
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -382,11 +469,23 @@ class ghee extends StatelessWidget {
                           ),
                             textAlign: TextAlign.left,),
                           // SizedBox(height: 5,),
-                          Text("Rs. 950 (5 KG)",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                            textAlign: TextAlign.left,)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("Rs. 950 (5 KG)",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.left,),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 10.0),
+                                child: IconButton(
+                                    icon: Icon(Icons.add_shopping_cart),
+                                    onPressed: () {
+                                    }),
+                              )
+                            ],
+                          )
                         ],
                       ),
                     ),

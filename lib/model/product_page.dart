@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:utility_shop/provider/dalda_notifier.dart';
 
 class product_page extends StatelessWidget {
   final String image, text, price;
@@ -9,6 +11,7 @@ class product_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    daldaNotifier daldanotifier = Provider.of<daldaNotifier>(context);
 
     return Column(
         children: [
@@ -25,8 +28,7 @@ class product_page extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(color: Colors.grey),
                   ),
-                  height: size.height*0.35,
-                  width: size.width*0.45,
+
                   child: Column(
                     //mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,13 +48,26 @@ class product_page extends StatelessWidget {
                       ),
                         textAlign: TextAlign.left,),
                       //SizedBox(height: 10,),
-                      Text(price,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                          letterSpacing: 1,
-                        ),
-                        textAlign: TextAlign.left,)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment
+                            .spaceBetween,
+                        children: [
+                          Text(price,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              letterSpacing: 1,
+                            ),
+                            textAlign: TextAlign.left,),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 0),
+                            child: IconButton(
+                                icon: Icon(Icons.add_shopping_cart),
+                                onPressed: press
+                            ),
+                          )
+                        ],
+                      )
                     ],
                   ),
                 ),
