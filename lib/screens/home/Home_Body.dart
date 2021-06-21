@@ -13,7 +13,9 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:utility_shop/screens/home/home_slider.dart';
 import 'package:utility_shop/screens/home/recommended.dart';
 import 'package:utility_shop/screens/home/specialForYou.dart';
+import 'package:utility_shop/screens/home/topBrands.dart';
 import 'package:utility_shop/screens/home/types1.dart';
+import 'package:utility_shop/screens/recommended/firstRecommend.dart';
 
 import '../../constants.dart';
 import 'cartIcon.dart';
@@ -45,16 +47,13 @@ class _Home_BodyState extends State<Home_Body> {
               SizedBox(height: 15),
               categories3(),
               SizedBox(height: 10),
-              category_slider(text: "Special for you"),
-              home_slider(),
+              category_slider(text: "Top Brands"),
+              topBrands(),
               SizedBox(height: 10),
-              category_slider(text: "Category"),
-              types(),
-              SizedBox(height: 10),
-              types2(),
               category_slider(text: "Recommended"),
-              recommended(),
-
+              firstRecommend(),
+              SizedBox(height: 10),
+              firstRecommend(),
             ],
           ),
         ),

@@ -85,6 +85,7 @@ class _BodyState extends State<Body> {
     }
     }
 
+
     void _submitform() async {
     setState(() {
       signupLoading= true;
@@ -110,6 +111,7 @@ class _BodyState extends State<Body> {
   Map userProfile;
   final facebookLogin = FacebookLogin();
   GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
+
 
 
   @override

@@ -93,11 +93,11 @@ class _daldaGheeState extends State<daldaGhee> {
                                           icon: Icon(Icons.add_shopping_cart),
                                           onPressed: () {
                                             // daldanotifier.currentDalda = daldanotifier.daldaList[index];
-                                            // Navigator.of(context).push(
-                                            //     MaterialPageRoute(builder: (BuildContext context){
-                                            //       return CartPage();
-                                            //     })
-                                            // );
+                                            Navigator.of(context).push(
+                                                MaterialPageRoute(builder: (BuildContext context){
+                                                  return CartPage();
+                                                })
+                                            );
                                           }),
                                     )
                                   ],

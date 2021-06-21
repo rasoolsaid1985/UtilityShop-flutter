@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:utility_shop/product/_detail/sugar/sugar.dart';
+import 'package:utility_shop/product/_detail/sugar/sugarDetail.dart';
 import 'package:utility_shop/screens/categories_product/Oil.dart';
 
 import 'package:utility_shop/screens/categories_product/flour.dart';
@@ -45,7 +47,7 @@ class categories_padding extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return sugar_product();
+                    return Sugars();
                   },
                 ),
               );

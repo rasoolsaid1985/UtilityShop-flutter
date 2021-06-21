@@ -57,12 +57,12 @@ class productDetail extends StatelessWidget {
                                 child: IconButton(
                                     icon: Icon(Icons.add_shopping_cart),
                                     onPressed: () {
-                                      daldanotifier.currentDalda = daldanotifier.daldaList[index];
-                                      Navigator.of(context).push(
-                                          MaterialPageRoute(builder: (BuildContext context){
-                                            return CartPage();
-                                          })
-                                      );
+                                      // daldanotifier.currentDalda = daldanotifier.daldaList[index];
+                                      // Navigator.of(context).push(
+                                      //     MaterialPageRoute(builder: (BuildContext context){
+                                      //       return CartPage();
+                                      //     })
+                                      // );
                                     }),
                               )
                             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:utility_shop/cart/CartScreen.dart';
 import 'package:utility_shop/cart/cart_screen.dart';
 import 'package:utility_shop/screens/brand/brand.dart';
 import 'package:utility_shop/screens/profile/profile.dart';

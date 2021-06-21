@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:utility_shop/model/productPage.dart';
 import 'package:utility_shop/product/_detail/ghee/daldaGhee.dart';
 import 'package:utility_shop/product/_detail/ghee/ghee.dart';
+import 'package:utility_shop/product/_detail/pulses/pulses.dart';
 import 'package:utility_shop/screens/categories_product/milk.dart';
 import 'package:utility_shop/screens/categories_product/pulses.dart';
 import 'package:utility_shop/screens/categories_product/rice.dart';
@@ -28,7 +29,7 @@ class categories2 extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return pulses();
+                    return pulse();
                   },
                 ),
               );

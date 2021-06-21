@@ -14,6 +14,7 @@ import 'package:utility_shop/screens/profile/payment.dart';
 import 'package:utility_shop/screens/profile/profile_menu.dart';
 import 'package:utility_shop/screens/profile/profile_picture.dart';
 import 'package:utility_shop/screens/profile/task.dart';
+import 'package:utility_shop/screens/welcome.dart';
 
 import 'firebaseServ.dart';
 
@@ -202,6 +203,14 @@ class _profileBodyState extends State<profileBody> {
                     text: "Logout",
                     press: (){
                     FirebaseAuth.instance.signOut();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return welcome();
+                        },
+                      ),
+                    );
                     },
                   )
                 ],
